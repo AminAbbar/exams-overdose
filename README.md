@@ -527,7 +527,7 @@ int main(){
 
 ## 1
 
-![1](.\tracking\1.png)
+![1](./tracking/1.png)
 
 ```cpp
 #include <iostream>
@@ -549,7 +549,7 @@ int main(){
 
 ## 2
 
-![2](.\tracking\2.png)
+![2](./tracking/2.png)
 
 ```cpp
 #include <iostream>
@@ -575,7 +575,7 @@ int main(){
 
 ## 3
 
-![3](.\tracking\3.png)
+![3](./tracking/3.png)
 
 ```cpp
 #include <iostream>
@@ -599,7 +599,7 @@ int main(){
 
 ## 4
 
-![4](.\tracking\4.png)
+![4](./tracking/4.png)
 
 ```cpp
 #include <iostream>
@@ -619,7 +619,7 @@ int main(){
 
 ## 5
 
-![5](.\tracking\5.png)
+![5](./tracking/5.png)
 
 ```cpp
 #include <iostream>
@@ -636,7 +636,7 @@ int main(){
 
 ## 6
 
-![6](.\tracking\6.png)
+![6](./tracking/6.png)
 
 ```cpp
 #include <iostream>
@@ -656,7 +656,7 @@ int main(){
 
 ## 7
 
-![7](.\tracking\7.png)
+![7](./tracking/7.png)
 
 ```cpp
 #include <iostream>
@@ -685,7 +685,7 @@ int main(){
 
 ## 8
 
-![8](.\tracking\8.png)
+![8](./tracking/8.png)
 
 ```cpp
 #include <iostream>
@@ -711,7 +711,7 @@ int main(){
 
 ## 9
 
-![9](.\tracking\9.png)
+![9](./tracking/9.png)
 
 ```cpp
 #include <iostream>
@@ -752,7 +752,7 @@ int main(){
 
 ## 10
 
-![10](.\tracking\10.png)
+![10](./tracking/10.png)
 
 ```cpp
 #include <iostream>
@@ -774,7 +774,7 @@ int main(){
 
 ## 11
 
-![11](.\tracking\11.png)
+![11](./tracking/11.png)
 
 ```cpp
 #include <iostream>
@@ -802,7 +802,7 @@ int main(){
 
 ## 12
 
-![12](.\tracking\12.png)
+![12](./tracking/12.png)
 
 ```cpp
 #include <iostream>
@@ -826,7 +826,7 @@ int main(){
 
 ## 13
 
-![13](.\tracking\13.png)
+![13](./tracking/13.png)
 
 ```cpp
 #include <iostream>
@@ -852,7 +852,7 @@ int main(){
 
 ## 14
 
-![14](.\tracking\14.png)
+![14](./tracking/14.png)
 
 ```cpp
 #include <iostream>
@@ -886,7 +886,7 @@ int main(){
 
 ## 15
 
-![15](.\tracking\15.png)
+![15](./tracking/15.png)
 
 ```cpp
 #include <iostream>
@@ -904,7 +904,7 @@ int main(){
 
 ## 16
 
-![16](.\tracking\16.png)
+![16](./tracking/16.png)
 
 ```cpp
 #include <iostream>
@@ -931,7 +931,7 @@ int main(){
 
 ## 17
 
-![17](.\tracking\17.png)
+![17](./tracking/17.png)
 
 ```cpp
 #include <iostream>
@@ -954,7 +954,7 @@ int main(){
 
 ## 18
 
-![18](.\tracking\18.png)
+![18](./tracking/18.png)
 
 ```cpp
 #include <iostream>
@@ -979,7 +979,7 @@ int main(){
 
 ## 19
 
-![19](.\tracking\19.png)
+![19](./tracking/19.png)
 
 ```cpp
 #include <iostream>
@@ -1002,7 +1002,7 @@ int main(){
 
 ## 20
 
-![20](.\tracking\20.png)
+![20](./tracking/20.png)
 
 ```cpp
 #include <iostream>
