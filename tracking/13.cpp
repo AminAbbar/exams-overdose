@@ -12,7 +12,7 @@ int main(){
     for(r=0.2; r<=(0.1*10) ; r+=0.1)
         v=s+r;
 
-    cout  <<   r << " "   << " "<<  s  << " "  <<  t   << " " << v;
+    cout  <<  r   <<  s   <<  t   << v;
 
 
     return 0;
