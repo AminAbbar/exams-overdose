@@ -4,6 +4,7 @@
   <p align="center">
     لو عندك اسئلة زيادة او لاحظت خطأ تقدر تصلحه مباشرة او قوللنا ويتصلح
     <br />
+    <a href="https://t.me/yourSpaece">قناة التلغرام</a>
     ·
     <a href="https://t.me/itstudents2024">قروب التلغرام</a>
   </p>
