@@ -6,7 +6,7 @@ int main(){
     
     int i , j , m;
 
-    i = 0 ; j = 0;
+    i = 0 ; j = 1;
     m = ++j + ++i + i++;
     cout << j++ << ++j << i << m;
 
