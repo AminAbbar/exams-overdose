@@ -566,7 +566,7 @@ int main(){
      for(i = 0; i <n-1;i=i+2)
        a[i]= a[i] * 2;
 
-     for(i = 0 ; i < n-2;i++)
+     for(i = 1 ; i < n-2;i++)
       cout <<a[i] << " " ;
      
 
