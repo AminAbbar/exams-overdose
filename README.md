@@ -1,33 +1,470 @@
-
 <div align="center">
-  <h3 align="center">أسئلة امتحانات نهائية سابقة مع الحل</h3>
-  <p align="center">
-    لو عندك اسئلة زيادة او لاحظت خطأ تقدر تصلحه مباشرة او قوللنا ويتصلح
-    <br />
-    <a href="https://t.me/yourSpaece">قناة التلغرام</a>
-    ·
-    <a href="https://t.me/itstudents2024">قروب التلغرام</a>
-  </p>
-</div>
+    <h3 align="center">أسئلة امتحانات نهائية سابقة مع الحل</h3>
+    <p align="center">
+      لو عندك اسئلة زيادة او لاحظت خطأ تقدر تصلحه مباشرة او قوللنا ويتصلح
+      <br />
+      <a href="https://t.me/yourSpaece">قناة التلغرام</a>
+      ·
+      <a href="https://t.me/itstudents2024">قروب التلغرام</a>
+    </p>
+  </div>
+    <h1>المواد :</h1>
+    <ol>
+      <li><a href="#GI131"><h3><b>برمجة 1</b></h3></a></li>
+<li><a href="#GI132"><h3><b>برمجة 2</b></h3></a></li>
+    </ol>
+    <br id="GI131" />    <details>      <summary><h1>برمجة 1</h1></summary>            <ol>                          <li><details>            <summary><b>أسئلة النهائي</b></summary>            <ol>              <li><details><summary><a href="#GI131_final_Trace"><b>أسئلة التتبع</b></a></summary></details></li>              <li><details><summary><a href="#GI131_final_Problem"><b>أسئلة المقالي</b></a></summary></details></li>            </ol>          </details></li>      </ol> 
+      <br id="GI131_final_Trace">
+<details>      <summary><h3>نهائي - أسئلة التتبع :</h3></summary>
 
-<details>
-  <summary>انواع الأسئلة</summary>
-  <ol>
-    <li><a href="#first">الأسئلة المقالية</a></li>
-    <li><a href="#second">اسئلة التتبع</a></li>
+![](./GI131/final/tracing/1.png) 
 
-  </ol>
+ ```cpp 
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    
+    int i , j , m;
+
+    i = 0 ; j = 1;
+    m = ++j + ++i + i++;
+    cout << j++ << ++j << i << m;
+
+
+    return 0;
+}  
+```
+![](./GI131/final/tracing/10.png) 
+
+ ```cpp 
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    
+   for(int i = 1; i<=5;i++){
+
+    for(int j=i; j<=5;j++)
+       cout << j << " ";
+    cout << endl;  
+   }
+
+    return 0;
+}  
+```
+![](./GI131/final/tracing/11.png) 
+
+ ```cpp 
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+   int x=12;
+
+   do{
+       cout << x << " ";
+       x++;
+       
+   }while(x<=10);
+
+   while(x<=15){
+    cout << x << " ";
+    x++;
+   }
+
+    return 0;
+}  
+```
+![](./GI131/final/tracing/12.png) 
+
+ ```cpp 
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+    for(int i = 1;  i<= 5;i++){
+
+        for(int j=i; j<=5;j++)
+           cout << j << " ";
+
+        cout << endl;
+    }
+
+  
+    return 0;
+}  
+```
+![](./GI131/final/tracing/13.png) 
+
+ ```cpp 
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    
+    float r ,s,t,v;
+
+    r=0.1;
+    s=0.2;
+    t=0.3;
+    for(r=0.2; r<=(0.1*10) ; r+=0.1)
+        v=s+r;
+
+    cout  <<  r   <<  s   <<  t   << v;
+
+
+    return 0;
+}  
+```
+![](./GI131/final/tracing/14.png) 
+
+ ```cpp 
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+    int n=6, i , j;
+
+    int b[20] = {11 ,12,13,14,15,16};
+    
+    for(i=0;i<n-2;i=i+3)
+     b[i] = b[i+1]*2;
+    
+    for(i = 0 ; i<n;i++)
+        if(i<n-3)
+         b[i] = b[i+1];
+    
+    i++;
+
+    for(j=n ; j>n;j--)
+      b[j] = b[j];
+    
+    for(i=0; i<n;i++)
+      cout << b[i] << " ";
+
+    return 0;
+}  
+```
+![](./GI131/final/tracing/15.png) 
+
+ ```cpp 
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+     // int a = {4,6,6,3,33,24}; ///  خطأ بيخلي الكود كله ميخدمش الجواب لايطبع شيء
+     
+
+    return 0;
+}  
+```
+![](./GI131/final/tracing/16.png) 
+
+ ```cpp 
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+    int i=1, j=1,t=6,n=7;
+
+    t= ++i+t;
+    i = i+t;
+    j+=n;
+
+    if(t+t >=12 && j+j>=15)
+      cout<< t << i << j << n;
+    
+    else 
+      cout << t ;
+
+    return 0;
+}  
+```
+![](./GI131/final/tracing/17.png) 
+
+ ```cpp 
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+    int i , j , m;
+
+    i = 0 ; j = 1;
+
+    m = ++j + ++i + i++;
+
+    cout << j++ << ++j << i << m;
+
+    return 0;
+}  
+```
+![](./GI131/final/tracing/18.png) 
+
+ ```cpp 
+#include <iostream>
+#include <string.h> // بيش ننادو ال strlen
+using namespace std;
+int main(){
+     //strlen دالة بتعد طول السلسلة بس 
+     //ملاحظة مش مقررة علينا
+  
+
+     char a[100] = "Ahmed Ali";
+
+     int L= strlen(a);
+
+     a[7] = 'M';
+     
+     cout<<a<<L;
+
+    return 0;
+}  
+```
+![](./GI131/final/tracing/19.png) 
+
+ ```cpp 
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+   int a[5];
+   int n=5, i , j , f=0;
+
+   //a[5] = {10 ,20,30,40,50};  ///  خطأ بيخلي الكود كله ميخدمش الجواب لايطبع شيء
+
+   
+
+
+    return 0;
+}  
+```
+![](./GI131/final/tracing/2.png) 
+
+ ```cpp 
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+     int n = 5 , i , j;
+
+     int a[5] = {2 ,4,5,6,7};
+
+     for(i = 0; i <n-1;i=i+2)
+       a[i]= a[i] * 2;
+
+     for(i = 1 ; i < n-2;i++)
+      cout <<a[i] << " " ;
+     
+
+    return 0;
+}  
+```
+![](./GI131/final/tracing/20.png) 
+
+ ```cpp 
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+     int n=5, i ,j;
+
+     int a[5]= {2,4,5,6,7};
+
+     for(i = 0 ; i<n-1;i=i+2)
+      a[i] = a[i] *2;
+
+     for(i = 1; i < n-2 ; i++)
+      cout << a[i] << " ";
+
+
+    return 0;
+}  
+```
+![](./GI131/final/tracing/3.png) 
+
+ ```cpp 
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+   float r,s,t,v;
+
+   r=0.1;s=0.2; t=0.3;
+
+   for(r=0.2;r<(0.1*10);r+=0.1)
+    v=s+r;
+    
+   cout << r << s << t <<v;
+
+    return 0;
+}  
+```
+![](./GI131/final/tracing/4.png) 
+
+ ```cpp 
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+   int a[5]; int  n=5 , i ,j,f=0;
+
+   //a[5] = {10, 20,30,40,50};  ///  خطأ بيخلي الكود كله ميخدمش الجواب لايطبع شيء
+   
+
+    return 0;
+}  
+```
+![](./GI131/final/tracing/5.png) 
+
+ ```cpp 
+#include <iostream>
+
+using namespace std;
+
+int main(){
+         
+     // int a = {4,6,6,3,33,24}; ///  خطأ بيخلي الكود كله ميخدمش الجواب لايطبع شيء
+
+    return 0;
+}  
+```
+![](./GI131/final/tracing/6.png) 
+
+ ```cpp 
+#include <iostream>
+#include <string.h> // بيش ننادو ال strlen
+using namespace std;
+int main(){
+     //strlen دالة بتعد طول السلسلة بس 
+     //ملاحظة مش مقررة علينا
+    char a[100] = "Ahmed Ali";
+    int L = strlen(a);
+    a[7] = 'M';
+    cout << a << L;
+
+    return 0;
+}  
+```
+![](./GI131/final/tracing/7.png) 
+
+ ```cpp 
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+    int x =12;
+
+    do{
+
+        cout << x << " ";
+        x++;
+    }while(x<=10);
+    
+
+    while(x<=15){
+        cout << x << " ";
+        x++;
+    }
+
+    return 0;
+}  
+```
+![](./GI131/final/tracing/8.png) 
+
+ ```cpp 
+#include <iostream>
+
+using namespace std;
+
+int main(){
+      int i = 1, j=1,t=6,n=7;
+
+      t=++i+t;
+      i=i+t;
+      j+=n;
+      if(t+t >= 12 && j+j>=15)
+        cout << t << i << j << n;
+      else
+       cout<<t;
+      
+
+
+    return 0;
+}  
+```
+![](./GI131/final/tracing/9.png) 
+
+ ```cpp 
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+
+
+ int n = 6 , i , j;
+
+ int b[20]={11,12,13,14,15,16};
+
+
+ for(i=0;i<n-2;i=i+3)
+  b[i] = b[i+1] *2;
+
+ for(i=0;i<n;i++)
+  if(i<n-3)
+    b[i]=b[i+1];
+
+ i++;
+
+ for(j=n;j>n ; j--)
+    b[j]=b[j];
+    
+ for (i=0;i<n;i++)
+    cout << b[i] << " ";
+
+
+
+
+
+    return 0;
+}  
+```
 </details>
+<br id="GI131_final_Problem">
+<details>      <summary><h3>نهائي - الأسئلة المقالية :</h3></summary>
+      
+![](./GI131/final/problemSolving/1.png) 
 
-<br id="first"/>
-
-# الأسئلة المقالية
-
-## 1
-
-![1](1.png)
-
-```cpp
+ ```cpp 
 #include <iostream>
 
 using namespace std;
@@ -53,14 +490,105 @@ int main(){
 
 
     return 0;
-}
+}  
 ```
+![](./GI131/final/problemSolving/10.png) 
 
-## 2
+ ```cpp 
+#include <iostream>
 
-![2](2.png)
+using namespace std;
 
-```cpp
+int main(){
+
+    int sum = 0;
+
+    for( int i= 501 ; i < 5000 ;i++)
+      if(i%2 !=0)
+        sum += i;
+    
+
+    cout << sum ;
+
+
+    return 0;
+}  
+```
+![](./GI131/final/problemSolving/11.png) 
+
+ ```cpp 
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+   float grams  ;
+   int choice; // متغير للخيار
+
+   cin >> grams;
+
+   cin >> choice;
+
+   switch (choice)
+   {
+   case 1: // من الجرام للكيلو
+    grams /= 1000;
+    cout <<  grams << " kilogram" << endl;
+
+    break;
+   case 2: //الى الطن
+    grams /= (1000*1000);
+    cout <<  grams << " ton" << endl;
+
+    break;
+   case 3:// للباوند
+    grams /= 453;
+    cout <<  grams << " pound" << endl;
+
+    break;
+   case 4: // للأونصة
+    grams /= 28;
+    cout <<  grams << "  ounce" << endl;
+    break;
+   
+   default:
+    cout << "EXIT!";
+   }
+
+
+    return 0;
+}  
+```
+![](./GI131/final/problemSolving/12.png) 
+
+ ```cpp 
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+
+    int a ; // درجة الطالب
+
+    cin >> a;
+
+    int requ  = 120 * 0.75 ; // بيش نعرفو كم درجة 75% من 120 بنضربوها ف 75 على 100 يلي هي 0.75
+    
+    if(a >=requ){
+        cout << "accepted"; // مدرناهاش بالعربي لان مشاكل طباعة بالعربي بس
+
+    }else{
+        cout << "rejected";
+    }
+    
+    return 0;
+}  
+```
+![](./GI131/final/problemSolving/2.png) 
+
+ ```cpp 
 #include <iostream>
 
 using namespace std;
@@ -129,14 +657,11 @@ int main(){
     cout << endl;
 
     return 0;
-}
+}  
 ```
+![](./GI131/final/problemSolving/3.png) 
 
-## 3
-
-![3](3.png)
-
-```cpp
+ ```cpp 
 #include <iostream>
 
 using namespace std;
@@ -206,14 +731,11 @@ int main(){
     cout << endl;
 
     return 0;
-}
+}  
 ```
+![](./GI131/final/problemSolving/4.png) 
 
-## 4
-
-![4](4.png)
-
-```cpp
+ ```cpp 
 #include <iostream>
 
 using namespace std;
@@ -247,14 +769,11 @@ int main(){
 
 
     return 0;
-}
+}  
 ```
+![](./GI131/final/problemSolving/5.png) 
 
-## 5
-
-![5](5.png)
-
-```cpp
+ ```cpp 
 #include <iostream>
 
 using namespace std;
@@ -282,20 +801,16 @@ int main(){
     cout << nam << endl;
     
     return 0;
-}
+}  
 ```
+![](./GI131/final/problemSolving/6.png) 
 
-## 6
-
-![6](6.png)
-
-```cpp
+ ```cpp 
 #include <iostream>
 
 using namespace std;
 
 int main(){
-
     int sum = 0;
     for (int i = 101; i < 1000 ; i++){
         if (i % 5 == 0) { // لو قبل القسمة عليه يعني من مضاعفاته
@@ -305,14 +820,11 @@ int main(){
     cout << sum << endl;
 
     return 0;
-}
+}  
 ```
+![](./GI131/final/problemSolving/7.png) 
 
-## 7
-
-![7](7.png)
-
-```cpp
+ ```cpp 
 #include <iostream>
 
 using namespace std;
@@ -350,14 +862,11 @@ int main(){
 
 
     return 0;
-}
+}  
 ```
+![](./GI131/final/problemSolving/8.png) 
 
-## 8
-
-![8](8.png)
-
-```cpp
+ ```cpp 
 #include <iostream>
 
 using namespace std;
@@ -394,14 +903,11 @@ float w = 0  , n;
     cout << w << endl;
 
     return 0;
-}
+}  
 ```
+![](./GI131/final/problemSolving/9.png) 
 
-## 9
-
-![9](9.png)
-
-```cpp
+ ```cpp 
 #include <iostream>
 
 using namespace std;
@@ -416,616 +922,15 @@ int main(){
     } 
     cout << sum << endl;
 
+
     return 0;
-}
+}  
 ```
-
-## 10
-
-![10](10.png)
-
-```cpp
-#include <iostream>
-
-using namespace std;
-
-int main(){
-
-    int sum = 0;
-
-    for( int i= 501 ; i < 5000 ;i++)
-      if(i%2 !=0)
-        sum += i;
+</details>
     
-
-    cout << sum ;
-
-
-    return 0;
-}
-```
-
-## 11
-
-![11](11.png)
-
-```cpp
-#include <iostream>
-
-using namespace std;
-
-int main(){
-
-   float grams  ;
-   int choice; // متغير للخيار
-
-   cin >> grams;
-
-   cin >> choice;
-
-   switch (choice)
-   {
-   case 1: // من الجرام للكيلو
-    grams /= 1000;
-    cout <<  grams << " kilogram" << endl;
-
-    break;
-   case 2: //الى الطن
-    grams /= (1000*1000);
-    cout <<  grams << " ton" << endl;
-
-    break;
-   case 3:// للباوند
-    grams /= 453;
-    cout <<  grams << " pound" << endl;
-
-    break;
-   case 4: // للأونصة
-    grams /= 28;
-    cout <<  grams << "  ounce" << endl;
-    break;
-   
-   default:
-    cout << "EXIT!";
-   }
-
-
-    return 0;
-}
-```
-
-## 12
-
-![12](12.png)
-
-```cpp
-#include <iostream>
-
-using namespace std;
-
-int main(){
-
-
-    int a ; // درجة الطالب
-
-    cin >> a;
-
-    int requ  = 120 * 0.75 ; // بيش نعرفو كم درجة 75% من 120 بنضربوها ف 75 على 100 يلي هي 0.75
-    
-    if(a >=requ){
-        cout << "accepted"; // مدرناهاش بالعربي لان مشاكل طباعة بالعربي بس
-
-    }else{
-        cout << "rejected";
-    }
-    
-    return 0;
-}
-```
-
-
-<br id="second"/>
-
-# اسئلة التتبع
-
-## 1
-
-![1](./tracking/1.png)
-
-```cpp
-#include <iostream>
-
-using namespace std;
-
-int main(){
-    
-    int i , j , m;
-
-    i = 0 ; j = 1;
-    m = ++j + ++i + i++;
-    cout << j++ << ++j << i << m;
-
-
-    return 0;
-}
-```
-
-## 2
-
-![2](./tracking/2.png)
-
-```cpp
-#include <iostream>
-
-using namespace std;
-
-int main(){
-
-     int n = 5 , i , j;
-
-     int a[5] = {2 ,4,5,6,7};
-
-     for(i = 0; i <n-1;i=i+2)
-       a[i]= a[i] * 2;
-
-     for(i = 1 ; i < n-2;i++)
-      cout <<a[i] << " " ;
-     
-
-    return 0;
-}
-```
-
-## 3
-
-![3](./tracking/3.png)
-
-```cpp
-#include <iostream>
-
-using namespace std;
-
-int main(){
-
-   float r,s,t,v;
-
-   r=0.1;s=0.2; t=0.3;
-
-   for(r=0.2;r<(0.1*10);r+=0.1)
-    v=s+r;
-    
-   cout << r << s << t <<v;
-
-    return 0;
-}
-```
-
-## 4
-
-![4](./tracking/4.png)
-
-```cpp
-#include <iostream>
-
-using namespace std;
-
-int main(){
-
-   int a[5]; int  n=5 , i ,j,f=0;
-
-   //a[5] = {10, 20,30,40,50};  ///  خطأ بيخلي الكود كله ميخدمش الجواب لايطبع شيء
-   
-
-    return 0;
-}
-```
-
-## 5
-
-![5](./tracking/5.png)
-
-```cpp
-#include <iostream>
-
-using namespace std;
-
-int main(){
-         
-     // int a = {4,6,6,3,33,24}; ///  خطأ بيخلي الكود كله ميخدمش الجواب لايطبع شيء
-
-    return 0;
-}
-```
-
-## 6
-
-![6](./tracking/6.png)
-
-```cpp
-#include <iostream>
-#include <string.h> // بيش ننادو ال strlen
-using namespace std;
-int main(){
-     //strlen دالة بتعد طول السلسلة بس 
-     //ملاحظة مش مقررة علينا
-    char a[100] = "Ahmed Ali";
-    int L = strlen(a);
-    a[7] = 'M';
-    cout << a << L;
-
-    return 0;
-}
-```
-
-## 7
-
-![7](./tracking/7.png)
-
-```cpp
-#include <iostream>
-
-using namespace std;
-
-int main(){
-
-    int x =12;
-
-    do{
-
-        cout << x << " ";
-        x++;
-    }while(x<=10);
-    
-
-    while(x<=15){
-        cout << x << " ";
-        x++;
-    }
-
-    return 0;
-}
-```
-
-## 8
-
-![8](./tracking/8.png)
-
-```cpp
-#include <iostream>
-
-using namespace std;
-
-int main(){
-      int i = 1, j=1,t=6,n=7;
-
-      t=++i+t;
-      i=i+t;
-      j+=n;
-      if(t+t >= 12 && j+j>=15)
-        cout << t << i << j << n;
-      else
-       cout<<t;
-      
-
-
-    return 0;
-}
-```
-
-## 9
-
-![9](./tracking/9.png)
-
-```cpp
-#include <iostream>
-
-using namespace std;
-
-int main(){
-
-
-
- int n = 6 , i , j;
-
- int b[20]={11,12,13,14,15,16};
-
-
- for(i=0;i<n-2;i=i+3)
-  b[i] = b[i+1] *2;
-
- for(i=0;i<n;i++)
-  if(i<n-3)
-    b[i]=b[i+1];
-
- i++;
-
- for(j=n;j>n ; j--)
-    b[j]=b[j];
-    
- for (i=0;i<n;i++)
-    cout << b[i] << " ";
-
-
-
-
-
-    return 0;
-}
-```
-
-## 10
-
-![10](./tracking/10.png)
-
-```cpp
-#include <iostream>
-
-using namespace std;
-
-int main(){
-    
-   for(int i = 1; i<=5;i++){
-
-    for(int j=i; j<=5;j++)
-       cout << j << " ";
-    cout << endl;  
-   }
-
-    return 0;
-}
-```
-
-## 11
-
-![11](./tracking/11.png)
-
-```cpp
-#include <iostream>
-
-using namespace std;
-
-int main(){
-
-   int x=12;
-
-   do{
-       cout << x << " ";
-       x++;
-       
-   }while(x<=10);
-
-   while(x<=15){
-    cout << x << " ";
-    x++;
-   }
-
-    return 0;
-}
-```
-
-## 12
-
-![12](./tracking/12.png)
-
-```cpp
-#include <iostream>
-
-using namespace std;
-
-int main(){
-
-    for(int i = 1;  i<= 5;i++){
-
-        for(int j=i; j<=5;j++)
-           cout << j << " ";
-
-        cout << endl;
-    }
-
+</details>
   
-    return 0;
-}
-```
-
-## 13
-
-![13](./tracking/13.png)
-
-```cpp
-#include <iostream>
-
-using namespace std;
-
-int main(){
-    
-    float r ,s,t,v;
-
-    r=0.1;
-    s=0.2;
-    t=0.3;
-    for(r=0.2; r<=(0.1*10) ; r+=0.1)
-        v=s+r;
-
-    cout  <<  r   <<  s   <<  t   << v;
-
-
-    return 0;
-}
-```
-
-## 14
-
-![14](./tracking/14.png)
-
-```cpp
-#include <iostream>
-
-using namespace std;
-
-int main(){
-
-    int n=6, i , j;
-
-    int b[20] = {11 ,12,13,14,15,16};
-    
-    for(i=0;i<n-2;i=i+3)
-     b[i] = b[i+1]*2;
-    
-    for(i = 0 ; i<n;i++)
-        if(i<n-3)
-         b[i] = b[i+1];
-    
-    i++;
-
-    for(j=n ; j>n;j--)
-      b[j] = b[j];
-    
-    for(i=0; i<n;i++)
-      cout << b[i] << " ";
-
-    return 0;
-}
-```
-
-## 15
-
-![15](./tracking/15.png)
-
-```cpp
-#include <iostream>
-
-using namespace std;
-
-int main(){
-
-     // int a = {4,6,6,3,33,24}; ///  خطأ بيخلي الكود كله ميخدمش الجواب لايطبع شيء
-     
-
-    return 0;
-}
-```
-
-## 16
-
-![16](./tracking/16.png)
-
-```cpp
-#include <iostream>
-
-using namespace std;
-
-int main(){
-
-    int i=1, j=1,t=6,n=7;
-
-    t= ++i+t;
-    i = i+t;
-    j+=n;
-
-    if(t+t >=12 && j+j>=15)
-      cout<< t << i << j << n;
-    
-    else 
-      cout << t ;
-
-    return 0;
-}
-```
-
-## 17
-
-![17](./tracking/17.png)
-
-```cpp
-#include <iostream>
-
-using namespace std;
-
-int main(){
-
-    int i , j , m;
-
-    i = 0 ; j = 1;
-
-    m = ++j + ++i + i++;
-
-    cout << j++ << ++j << i << m;
-
-    return 0;
-}
-```
-
-## 18
-
-![18](./tracking/18.png)
-
-```cpp
-#include <iostream>
-#include <string.h> // بيش ننادو ال strlen
-using namespace std;
-int main(){
-     //strlen دالة بتعد طول السلسلة بس 
-     //ملاحظة مش مقررة علينا
+<br id="GI132" />    <details>      <summary><h1>برمجة 2</h1></summary>            <ol>                      </ol> 
+</details>
   
-
-     char a[100] = "Ahmed Ali";
-
-     int L= strlen(a);
-
-     a[7] = 'M';
-     
-     cout<<a<<L;
-
-    return 0;
-}
-```
-
-## 19
-
-![19](./tracking/19.png)
-
-```cpp
-#include <iostream>
-
-using namespace std;
-
-int main(){
-
-   int a[5];
-   int n=5, i , j , f=0;
-
-   //a[5] = {10 ,20,30,40,50};  ///  خطأ بيخلي الكود كله ميخدمش الجواب لايطبع شيء
-
-   
-
-
-    return 0;
-}
-```
-
-## 20
-
-![20](./tracking/20.png)
-
-```cpp
-#include <iostream>
-
-using namespace std;
-
-int main(){
-
-     int n=5, i ,j;
-
-     int a[5]= {2,4,5,6,7};
-
-     for(i = 0 ; i<n-1;i=i+2)
-      a[i] = a[i] *2;
-
-     for(i = 1; i < n-2 ; i++)
-      cout << a[i] << " ";
-
-
-    return 0;
-}
-```
-
+  
