@@ -13,9 +13,9 @@
       <li><a href="#GI131"><h3><b>برمجة 1</b></h3></a></li>
 <li><a href="#GI132"><h3><b>برمجة 2</b></h3></a></li>
     </ol>
-    <br id="GI131" />    <details>      <summary><h1>برمجة 1</h1></summary>            <ol>                          <li><details>            <summary><b>أسئلة النهائي</b></summary>            <ol>              <li><detail><summary><a href="#GI131_final_Trace"><b>أسئلة التتبع</b></a></summary></detail></li>              <li><detail><summary><a href="#GI131_final_Problem"><b>أسئلة المقالي</b></a></summary></detail></li>            </ol>          </details></li>      </ol> 
+    <br id="GI131" />    <details>      <summary><h1>برمجة 1</h1></summary>            <ol>                          <li><details>            <summary><b>أسئلة النهائي</b></summary>            <ol>              <li><details><summary><a href="#GI131_final_Trace"><b>أسئلة التتبع</b></a></summary></details></li>              <li><details><summary><a href="#GI131_final_Problem"><b>أسئلة المقالي</b></a></summary></details></li>            </ol>          </details></li>      </ol> 
       <br id="GI131_final_Trace">
-      <summary><h3>نهائي - أسئلة التتبع :</h3></summary>
+<details>      <summary><h3>نهائي - أسئلة التتبع :</h3></summary>
 
 ![](./GI131/final/tracing/1.png) 
 
@@ -458,11 +458,11 @@ int main(){
     return 0;
 }  
 ```
-
-      <br id="GI131_final_Problem">
-      <summary><h3>نهائي - الأسئلة المقالية :</h3></summary>
+</details>
+<br id="GI131_final_Problem">
+<details>      <summary><h3>نهائي - الأسئلة المقالية :</h3></summary>
       
-![](./GI131/final/tracing/1.png) 
+![](./GI131/final/problemSolving/1.png) 
 
  ```cpp 
 #include <iostream>
@@ -492,7 +492,7 @@ int main(){
     return 0;
 }  
 ```
-![](./GI131/final/tracing/10.png) 
+![](./GI131/final/problemSolving/10.png) 
 
  ```cpp 
 #include <iostream>
@@ -514,7 +514,7 @@ int main(){
     return 0;
 }  
 ```
-![](./GI131/final/tracing/11.png) 
+![](./GI131/final/problemSolving/11.png) 
 
  ```cpp 
 #include <iostream>
@@ -560,7 +560,7 @@ int main(){
     return 0;
 }  
 ```
-![](./GI131/final/tracing/12.png) 
+![](./GI131/final/problemSolving/12.png) 
 
  ```cpp 
 #include <iostream>
@@ -586,7 +586,7 @@ int main(){
     return 0;
 }  
 ```
-![](./GI131/final/tracing/2.png) 
+![](./GI131/final/problemSolving/2.png) 
 
  ```cpp 
 #include <iostream>
@@ -659,7 +659,7 @@ int main(){
     return 0;
 }  
 ```
-![](./GI131/final/tracing/3.png) 
+![](./GI131/final/problemSolving/3.png) 
 
  ```cpp 
 #include <iostream>
@@ -733,7 +733,7 @@ int main(){
     return 0;
 }  
 ```
-![](./GI131/final/tracing/4.png) 
+![](./GI131/final/problemSolving/4.png) 
 
  ```cpp 
 #include <iostream>
@@ -771,7 +771,7 @@ int main(){
     return 0;
 }  
 ```
-![](./GI131/final/tracing/5.png) 
+![](./GI131/final/problemSolving/5.png) 
 
  ```cpp 
 #include <iostream>
@@ -803,7 +803,7 @@ int main(){
     return 0;
 }  
 ```
-![](./GI131/final/tracing/6.png) 
+![](./GI131/final/problemSolving/6.png) 
 
  ```cpp 
 #include <iostream>
@@ -822,7 +822,7 @@ int main(){
     return 0;
 }  
 ```
-![](./GI131/final/tracing/7.png) 
+![](./GI131/final/problemSolving/7.png) 
 
  ```cpp 
 #include <iostream>
@@ -864,7 +864,7 @@ int main(){
     return 0;
 }  
 ```
-![](./GI131/final/tracing/8.png) 
+![](./GI131/final/problemSolving/8.png) 
 
  ```cpp 
 #include <iostream>
@@ -905,7 +905,7 @@ float w = 0  , n;
     return 0;
 }  
 ```
-![](./GI131/final/tracing/9.png) 
+![](./GI131/final/problemSolving/9.png) 
 
  ```cpp 
 #include <iostream>
@@ -926,10 +926,11 @@ int main(){
     return 0;
 }  
 ```
+</details>
     
-    </details>
+</details>
   
 <br id="GI132" />    <details>      <summary><h1>برمجة 2</h1></summary>            <ol>                      </ol> 
-    </details>
+</details>
   
   
