@@ -87,7 +87,7 @@ const generateSubjectSection = (subjectName: string, hasMid: boolean, hasFinal: 
 
   const sectionHTML = `<br id="${id}" />
     <details>
-      <summary><h1>${displayName}</h1></summary>
+      <summary dir="rtl"><h1>${displayName}</h1></summary>
       ${hasFinal && hasMid ? '<h3>الفترة</h3>' : ''}
       <ul>
         ${hasMid ? `
