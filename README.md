@@ -13,7 +13,7 @@
       <li><a href="#GI131"><h3><b>برمجة 1</b></h3></a></li>
 <li><a href="#GI132"><h3><b>برمجة 2</b></h3></a></li>
     </ol>
-    <br id="GI131" />    <details>      <summary><h1>برمجة 1</h1></summary>            <ol>                          <li><details>            <summary><b>أسئلة النهائي</b></summary>            <ol>              <li><details><summary><a href="#GI131_final_Trace"><b>أسئلة التتبع</b></a></summary></details></li>              <li><details><summary><a href="#GI131_final_Problem"><b>أسئلة المقالي</b></a></summary></details></li>            </ol>          </details></li>      </ol> 
+    <br id="GI131" />    <details>      <summary><h1>برمجة 1</h1></summary>            <ul>                          <li>            <summary><b>أسئلة النهائي</b></summary>            <ol>              <li><summary><a href="#GI131_final_Trace"><b>أسئلة التتبع</b></a></summary></li>              <li><summary><a href="#GI131_final_Problem"><b>أسئلة المقالي</b></a></summary></li>            </ol>         </li>      </ul> 
       <br id="GI131_final_Trace">
 <details>      <summary><h3>نهائي - أسئلة التتبع :</h3></summary>
 
@@ -930,7 +930,7 @@ int main(){
     
 </details>
   
-<br id="GI132" />    <details>      <summary><h1>برمجة 2</h1></summary>            <ol>                      </ol> 
+<br id="GI132" />    <details>      <summary><h1>برمجة 2</h1></summary>            <ul>                      </ul> 
 </details>
   
   
