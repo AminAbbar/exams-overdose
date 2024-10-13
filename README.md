@@ -10,8 +10,8 @@
   </div>
     <h1>المواد :</h1>
     <ol>
-      <li><a href="#GI131"><h3><b>برمجة 1</b></h3></a></li>
-<li><a href="#GI132"><h3><b>برمجة 2</b></h3></a></li>
+      <li><h3><a href="#GI131"><b>برمجة 1</b></a></h3></li>
+<li><h3><a href="#GI132"><b>برمجة 2</b></a></h3></li>
     </ol>
     <br id="GI131" />    <details>      <summary><h1>برمجة 1</h1></summary>            <ol>                          <li><details>            <summary><b>أسئلة النهائي</b></summary>            <ol>              <li><details><summary><a href="#GI131_final_Trace"><b>أسئلة التتبع</b></a></summary></details></li>              <li><details><summary><a href="#GI131_final_Problem"><b>أسئلة المقالي</b></a></summary></details></li>            </ol>          </details></li>      </ol> 
       <br id="GI131_final_Trace">
