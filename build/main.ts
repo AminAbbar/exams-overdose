@@ -51,11 +51,11 @@ const generateSectionContent = (id: string, hasMid: boolean, hasFinal: boolean) 
 
     sectionContent += `
       <br id="${id}_mid_Trace">
-      <details><summary><h3> نصفي - أسئلة التتبع :</h3></summary>
+      <details><summary dir="rtl"><h3> نصفي - أسئلة التتبع :</h3></summary>
 ${generateCppFileContent(traceDir,currentFolder.name,"mid")}
 </details>
       <br id="${id}_mid_Problem">
-      <summary><h3> نصفي - الأسئلة المقالية :</h3></summary>
+      <summary dir="rtl"><h3> نصفي - الأسئلة المقالية :</h3></summary>
 ${generateCppFileContent(problemSolvingDir,currentFolder.name,"mid")}
     `;
   }
@@ -66,12 +66,12 @@ ${generateCppFileContent(problemSolvingDir,currentFolder.name,"mid")}
 
     sectionContent += `
       <br id="${id}_final_Trace">
-<details>      <summary><h3>نهائي - أسئلة التتبع :</h3></summary>
+<details>      <summary dir="rtl"><h3>نهائي - أسئلة التتبع :</h3></summary>
 
 ${generateCppFileContent(traceDir , currentFolder.name,"final")}
 </details>
 <br id="${id}_final_Problem">
-<details>      <summary><h3>نهائي - الأسئلة المقالية :</h3></summary>
+<details>      <summary dir="rtl"><h3>نهائي - الأسئلة المقالية :</h3></summary>
       
 ${generateCppFileContent(problemSolvingDir,currentFolder.name,"final")}
 </details>
@@ -93,18 +93,22 @@ const generateSubjectSection = (subjectName: string, hasMid: boolean, hasFinal: 
         ${hasMid ? `
           <li>
             <summary><b>أسئلة النصفي</b></summary>
-            <ol>
+              <br />
+            <ul>
               <li><summary><a href="#${id}_mid_Trace"><b>أسئلة التتبع</b></a></summary></li>
               <li><summary><a href="#${id}_mid_Problem"><b>أسئلة المقالي</b></a></summary></li>
-            </ol>
+            </ul>
           </li>` : ''}
         ${hasFinal ? `
           <li>
             <summary><b>أسئلة النهائي</b></summary>
-            <ol>
+              <br />
+            
+            <ul>
               <li><summary><a href="#${id}_final_Trace"><b>أسئلة التتبع</b></a></summary></li>
+
               <li><summary><a href="#${id}_final_Problem"><b>أسئلة المقالي</b></a></summary></li>
-            </ol>
+            </ul>
          </li>` : ''}
       </ul>`.replace(/\n/g, '')+` ${generateSectionContent(id, hasMid, hasFinal)}
 </details>
@@ -115,7 +119,7 @@ const generateSubjectSection = (subjectName: string, hasMid: boolean, hasFinal: 
 
 const buildReadmeContent = () => {
   let readmeContent = `<div align="center">
-    <h3 align="center">أسئلة امتحانات نهائية سابقة مع الحل</h3>
+    <h3 align="center">أسئلة امتحانات سابقة مع الحل</h3>
     <p align="center">
       لو عندك اسئلة زيادة او لاحظت خطأ تقدر تصلحه مباشرة او قوللنا ويتصلح
       <br />
@@ -138,13 +142,13 @@ const buildReadmeContent = () => {
     const displayName = metaData[subject.name.trim()] || subject.name;
     const id = subject.name.trim();
 
-    subjectsHTML.push(`<li dir="rtl"><h3 dir="rtl"><a dir="rtl" href="#${id}"><b>${displayName}</b></a></h3></li>`);
+    subjectsHTML.push(`<li ><h3 ><a  href="#${id}"><b >${displayName}</b></a></h3></li>`);
     sectionsHTML.push(generateSubjectSection(subject.name, hasMid, hasFinal));
   }
 
   readmeContent += `
     <h1>المواد :</h1>
-    <ol>
+    <ol dir="rtl">
       ${subjectsHTML.join("\n")}
     </ol>
     ${sectionsHTML.join("\n")}

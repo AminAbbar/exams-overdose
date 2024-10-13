@@ -1,5 +1,5 @@
 <div align="center">
-    <h3 align="center">أسئلة امتحانات نهائية سابقة مع الحل</h3>
+    <h3 align="center">أسئلة امتحانات سابقة مع الحل</h3>
     <p align="center">
       لو عندك اسئلة زيادة او لاحظت خطأ تقدر تصلحه مباشرة او قوللنا ويتصلح
       <br />
@@ -9,13 +9,13 @@
     </p>
   </div>
     <h1>المواد :</h1>
-    <ol>
-      <li dir="rtl"><h3 dir="rtl"><a dir="rtl" href="#GI131"><b>برمجة 1</b></a></h3></li>
-<li dir="rtl"><h3 dir="rtl"><a dir="rtl" href="#GI132"><b>برمجة 2</b></a></h3></li>
+    <ol dir="rtl">
+      <li ><h3 ><a  href="#GI131"><b >برمجة 1</b></a></h3></li>
+<li ><h3 ><a  href="#GI132"><b >برمجة 2</b></a></h3></li>
     </ol>
-    <br id="GI131" />    <details>      <summary dir="rtl"><h1>برمجة 1</h1></summary>            <ul>                          <li>            <summary><b>أسئلة النهائي</b></summary>            <ol>              <li><summary><a href="#GI131_final_Trace"><b>أسئلة التتبع</b></a></summary></li>              <li><summary><a href="#GI131_final_Problem"><b>أسئلة المقالي</b></a></summary></li>            </ol>         </li>      </ul> 
+    <br id="GI131" />    <details>      <summary dir="rtl"><h1>برمجة 1</h1></summary>            <ul>                          <li>            <summary><b>أسئلة النهائي</b></summary>              <br />                        <ul>              <li><summary><a href="#GI131_final_Trace"><b>أسئلة التتبع</b></a></summary></li>              <li><summary><a href="#GI131_final_Problem"><b>أسئلة المقالي</b></a></summary></li>            </ul>         </li>      </ul> 
       <br id="GI131_final_Trace">
-<details>      <summary><h3>نهائي - أسئلة التتبع :</h3></summary>
+<details>      <summary dir="rtl"><h3>نهائي - أسئلة التتبع :</h3></summary>
 
 ![](./GI131/final/tracing/1.png) 
 
@@ -460,7 +460,7 @@ int main(){
 ```
 </details>
 <br id="GI131_final_Problem">
-<details>      <summary><h3>نهائي - الأسئلة المقالية :</h3></summary>
+<details>      <summary dir="rtl"><h3>نهائي - الأسئلة المقالية :</h3></summary>
       
 ![](./GI131/final/problemSolving/1.png) 
 
