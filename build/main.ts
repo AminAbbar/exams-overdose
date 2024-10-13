@@ -138,7 +138,7 @@ const buildReadmeContent = () => {
     const displayName = metaData[subject.name.trim()] || subject.name;
     const id = subject.name.trim();
 
-    subjectsHTML.push(`<li><a href="#${id}"><h3><b>${displayName}</b></h3></a></li>`);
+    subjectsHTML.push(`<li><h3><a href="#${id}"><b>${displayName}</b></a></h3></li>`);
     sectionsHTML.push(generateSubjectSection(subject.name, hasMid, hasFinal));
   }
 
