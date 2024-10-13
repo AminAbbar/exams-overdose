@@ -89,24 +89,24 @@ const generateSubjectSection = (subjectName: string, hasMid: boolean, hasFinal: 
     <details>
       <summary><h1>${displayName}</h1></summary>
       ${hasFinal && hasMid ? '<h3>الفترة</h3>' : ''}
-      <ol>
+      <ul>
         ${hasMid ? `
-          <li><details>
+          <li>
             <summary><b>أسئلة النصفي</b></summary>
             <ol>
-              <li><details><summary><a href="#${id}_mid_Trace"><b>أسئلة التتبع</b></a></summary></details></li>
-              <li><details><summary><a href="#${id}_mid_Problem"><b>أسئلة المقالي</b></a></summary></details></li>
+              <li><summary><a href="#${id}_mid_Trace"><b>أسئلة التتبع</b></a></summary></li>
+              <li><summary><a href="#${id}_mid_Problem"><b>أسئلة المقالي</b></a></summary></li>
             </ol>
-          </details></li>` : ''}
+          </li>` : ''}
         ${hasFinal ? `
-          <li><details>
+          <li>
             <summary><b>أسئلة النهائي</b></summary>
             <ol>
-              <li><details><summary><a href="#${id}_final_Trace"><b>أسئلة التتبع</b></a></summary></details></li>
-              <li><details><summary><a href="#${id}_final_Problem"><b>أسئلة المقالي</b></a></summary></details></li>
+              <li><summary><a href="#${id}_final_Trace"><b>أسئلة التتبع</b></a></summary></li>
+              <li><summary><a href="#${id}_final_Problem"><b>أسئلة المقالي</b></a></summary></li>
             </ol>
-          </details></li>` : ''}
-      </ol>`.replace(/\n/g, '')+` ${generateSectionContent(id, hasMid, hasFinal)}
+         </li>` : ''}
+      </ul>`.replace(/\n/g, '')+` ${generateSectionContent(id, hasMid, hasFinal)}
 </details>
   `;
 
@@ -156,6 +156,8 @@ const buildReadmeContent = () => {
 try {
   const readmeContent = buildReadmeContent();
   Deno.writeFileSync('../README.md', encoder.encode(readmeContent));
+
+
 
 } catch (error) {
   console.error("error : ", error);
