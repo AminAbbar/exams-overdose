@@ -930,7 +930,451 @@ int main(){
     
 </details>
   
-<br id="GI132" />    <details>      <summary dir="rtl"><h1>برمجة 2</h1></summary>            <ul>                      </ul> 
+<br id="GI132" />    <details>      <summary dir="rtl"><h1>برمجة 2</h1></summary>            <ul>                          <li>            <summary><b>أسئلة النهائي</b></summary>              <br />                        <ul>              <li><summary><a href="#GI132_final_Trace"><b>أسئلة التتبع</b></a></summary></li>              <li><summary><a href="#GI132_final_Problem"><b>أسئلة المقالي</b></a></summary></li>            </ul>         </li>      </ul> 
+      <br id="GI132_final_Trace">
+<details>      <summary dir="rtl"><h3>نهائي - أسئلة التتبع :</h3></summary>
+
+
+</details>
+<br id="GI132_final_Problem">
+<details>      <summary dir="rtl"><h3>نهائي - الأسئلة المقالية :</h3></summary>
+      
+![](./GI132/final/problemSolving/1.png) 
+
+ ```cpp 
+#include <iostream>
+
+using namespace std;
+void readTwoDimensionalArray(int array[][100] , int rows , int columns){
+    
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < columns; j++){
+            cin >> array[i][j];
+        }
+    }
+
+}
+void calculateA (int A[][100] , int rows , int columns){
+
+    for(int i = 0; i < rows; i++)
+        for(int j = 0; j < columns; j++)
+            if(i % 2 == 0 && A[i][j] % 2 != 0)
+                A[i][j] *= 5;
+            
+             
+}
+
+void printTwoDimensionalArray(int array[][100] , int rows , int columns){
+    
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < columns; j++)
+            cout << array[i][j] << " ";
+
+    
+        cout << endl;
+        
+    }
+
+}
+
+int main(){
+    
+
+    int A[100][100] ;
+    int N , M;
+    cin >> N >> M;
+    readTwoDimensionalArray(A , N,M);
+    calculateA(A , N , M);
+    printTwoDimensionalArray(A , N , M);
+
+
+    return 0;
+}  
+```
+![](./GI132/final/problemSolving/2.png) 
+
+ ```cpp 
+#include <iostream>
+
+using namespace std;
+void print(int A[] , int n){
+    
+    for(int i = 0 ; i < n ; i++) 
+        cout << A[i] << " ";
+    
+    cout << endl;
+ 
+}
+
+void readArray(int A[] , int n){
+    
+    for(int i = 0 ; i < n ; i++) 
+        cin >> A[i];
+}
+
+int Trans(int A[] , int B[] , int n , int bSize){
+    for (int i = 0 ; i < n/2 ; i++) 
+      if(A[i] < 50){
+
+        B[bSize] = A[i];
+        bSize++;
+      }
+    return bSize;
+}
+
+//في حالة نسخ مش نقل متدورهاش الدالة هذي
+int reFormatArray(int A[] , int n){
+    for(int i = 0 ; i < n/2 ; i++)
+        if(A[i] < 50){
+           for(int j = i ; j < n ;j++)
+            A[j] = A[j+1];
+           
+           return reFormatArray(A , n-1);
+        }
+    
+    return n;
+} 
+int main(){
+
+    int n ,A[1000] , B[1000] , bSize= 0;
+    
+    cin >> n;
+
+    readArray(A,n);
+    bSize = Trans(A , B, n , bSize);
+    n = reFormatArray(A,n);
+    print(A,n);
+    print(B,bSize);
+    
+
+
+
+    return 0;
+}  
+```
+![](./GI132/final/problemSolving/3.png) 
+
+ ```cpp 
+#include <iostream>
+
+using namespace std;
+
+void readTwoDimensionalArray(int array[][100] , int rows , int columns){
+    
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < columns; j++){
+            cin >> *(*(array + i) + j);
+        }
+    }
+
+}
+
+
+void printCurrentRow(int array[][100] , int row , int columns ){
+     for(int i = 0; i < columns; i++)
+       cout <<  *(*(array + row) + i) << " ";
+     cout << endl;
+ 
+}
+
+void Search(int array[][100] , int rows , int columns , int x){
+   
+   for(int i = 0; i < rows; i++)
+        for(int j = 0; j < columns; j++)
+            if( *(*(array + i) + j) == x)
+             return printCurrentRow(array , i , columns);
+        
+    cout << "NO" ;
+
+
+}
+
+
+int main(){
+
+    int A[100][100];
+
+     int rows , cols , x ;
+
+     cin >> rows >> cols >> x ;
+
+    readTwoDimensionalArray(A,rows,cols);
+     Search(A,rows,cols ,x);
+
+
+
+    return 0;
+}  
+```
+![](./GI132/final/problemSolving/4.png) 
+
+ ```cpp 
+#include <iostream>
+
+using namespace std;
+
+void read2DArray(int array[][100] , int rows , int columns){
+    
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < columns; j++){
+            cin >> *(*(array + i) + j);
+        }
+    }
+
+}
+
+void print2DArray(int array[][100] , int rows , int columns){
+    
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < columns; j++)
+            cout << array[i][j] << " ";
+
+    
+        cout << endl;
+        
+    }
+
+}
+
+void print1DArray(int array[] , int columns){
+
+        for(int i = 0; i < columns; i++)
+            cout << array[i]<< " ";
+
+        cout << endl;
+
+}
+
+void Throw (int array[][100] , int rows , int columns ) {
+
+    int result[100];
+
+    int tracker = 0;
+
+    for(int i = 0; i < rows; i++){
+
+       *(result + tracker) = *(*(array  + columns - 1) + i );
+        tracker++;
+    }
+
+   print2DArray(array, rows , columns);
+   cout << endl;
+   print1DArray(result, columns);
+
+}
+int main(){
+    int array[100][100] , rows , columns;
+    cin >> rows >> columns;
+    read2DArray(array , rows , columns);
+    Throw(array , rows , columns);
+
+    return 0;
+}  
+```
+![](./GI132/final/problemSolving/5.png) 
+
+ ```cpp 
+#include <iostream>
+
+using namespace std;
+
+
+void print2DArray(int array[][500] , int rows , int columns){
+    
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < columns; j++)
+            cout <<*( *(array+i)+j) << " ";
+
+    
+        cout << endl;
+        
+    }
+
+}
+
+void Add(int arrayA[][100], int aRows , int aCols , int arrayB[][100], int bRows , int bCols){
+    int result[500][500];
+    int biggestRows =aRows , biggestCols =aCols;
+    if(aRows < bRows)
+      biggestRows = bRows;
+    if(aCols < bCols)
+      biggestCols = bCols;
+
+    for(int i = 0; i < biggestRows; i++){
+        for(int j = 0; j < biggestCols; j++){
+            int sum = 0;
+
+            if(i < aRows && j < aCols)
+              sum += *( *(arrayA+i)+j) ;
+
+            if(i < bRows && j < bCols)
+              sum += *( *(arrayB+i)+j);
+
+           *( *(result+i)+j) = sum;
+        }
+    }
+    print2DArray(result , biggestRows , biggestCols);
+}
+void read2DArray(int array[][100] , int rows , int columns){
+    
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < columns; j++){
+            cin >> *(*(array + i) + j);
+        }
+    }
+
+}
+int main(){
+    int aArray[100][100] , bArray[100][100] , aRows,aCols,bRows,bCols;
+
+    cin >> aRows >> aCols >> bRows >> bCols;
+
+    read2DArray(aArray,  aRows, aCols);
+    read2DArray(bArray,  bRows, bCols);
+    Add(aArray, aRows, aCols, bArray, bRows, bCols);
+
+
+
+
+    return 0;
+}  
+```
+![](./GI132/final/problemSolving/6.png) 
+
+ ```cpp 
+#include <iostream>
+#include <string.h> // بيش ننادو ال strlen
+using namespace std;
+
+
+void readNames(char names[][100] ,int n){
+    
+        cin.ignore();
+    for(int i = 0 ; i < n ; i++){
+        cin.getline(names[i] , 100);
+       
+    }
+      
+   
+}
+void mergeCodes(char name[100] ,char code[100]){
+    int n = strlen(name);
+    int m = strlen(code);
+    for (int i = 0 ; i < m ; i++)
+      name[i+n] = code[i];
+}
+void readCodes(char names[][100] , int n ){
+
+       cin.ignore();
+    for(int i = 0 ; i < n ; i++){
+        char code[50];
+        cin.getline(code , 100);
+        mergeCodes(names[i],code);
+       
+    }
+}
+
+void printNames(char names[][100], int n){
+
+    for(int i = 0 ; i < n ; i++){
+        cout << names[i] << endl;
+    }
+}
+int main(){
+    char names[100][100]  , codes[100][100];
+    int n;
+
+    cin >> n;
+    readNames(names, n);
+    readCodes(names, n);
+    printNames(names, n);
+    
+    return 0;
+}  
+```
+![](./GI132/final/problemSolving/7.png) 
+
+ ```cpp 
+#include <iostream>
+
+using namespace std;
+
+void readTwoDimensionalArray(int array[][100] , int rows , int columns){
+    
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < columns; j++){
+            cin >> array[i][j];
+        }
+    }
+
+}
+void printTwoDimensionalArray(int array[][100] , int rows , int columns){
+    
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < columns; j++)
+            cout << array[i][j] << " ";
+
+    
+        cout << endl;
+        
+    }
+
+}
+
+void calculateD(int C[][100] , int D[][100], int rows , int columns){
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < columns; j++){
+            if(j % 2 == 0)
+                D[i][j] = C[i][j];
+            else
+                D[i][j] = 4;
+        }
+    }
+}
+void sortTwoDimensionalArrayRows(int array[][100], int rows , int columns){
+    int temp;
+   
+    for(int i = 0; i < rows; i++)
+        for(int j = 0; j < columns - 1; j++)
+            for (int s = 0; s < columns - j - 1; s++)
+                if (array[i][s] > array[i][s + 1])
+                {
+                    temp = array[i][s];
+                    array[i][s] = array[i][s + 1];
+                    array[i][s + 1] = temp;
+                }
+        
+    
+}
+void calculateE(int C[][100] , int D[][100] , int E[][100], int rows , int columns){
+    for(int i = 0; i < rows ; i++){
+        for(int j = 0; j < columns; j++){
+            E[i][j] = C[i][j] + D[i][j] + 4;
+        }
+    }
+}
+int main(){
+     int cRows , cCols;
+     int C[100][100] , D[100][100] , E[100][100];
+     
+     cin >> cRows >> cCols;
+     readTwoDimensionalArray(C , cRows , cCols);
+    //  //أ
+    //  calculateD(C , D , cRows , cCols);
+    //  printTwoDimensionalArray(D , cRows , cCols);
+    //  //ب
+    //  calculateE(C , D , E , cRows , cCols);
+    //  printTwoDimensionalArray(E , cRows , cCols);
+    //  //ج
+     sortTwoDimensionalArrayRows(C , cRows , cCols);
+     printTwoDimensionalArray(C , cRows , cCols);
+
+ 
+    return 0;
+}  
+```
+</details>
+    
 </details>
   
   
