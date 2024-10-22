@@ -3,8 +3,8 @@ import { execSync } from "node:child_process";
 import fs from "node:fs";
 import { PDFDocument } from 'npm:pdf-lib';
 
-const decoder = new TextDecoder();
-const metaData: Record<string, string> = JSON.parse(decoder.decode(Deno.readFileSync("./metadata.json")));
+// const decoder = new TextDecoder();
+// const metaData: Record<string, string> = JSON.parse(decoder.decode(Deno.readFileSync("./metadata.json")));
 const dirname = import.meta.dirname;
 
 const toIgnore = ['.git', '.vscode', 'build'];
@@ -48,6 +48,9 @@ const generatePdf = async (pdfDoc:PDFDocument , questionImagePath: string, codeS
 
   const codeSnippetDims = codeSnippetImage.scale(0.5);
   const questionDims = questionImage.scale(1);
+  
+  codeSnippetDims.width = Math.max(questionDims.width, codeSnippetDims.width * 0.7)
+  codeSnippetDims.height = questionDims.width == codeSnippetDims.width ?  codeSnippetDims.height * 0.7 : codeSnippetDims.height
   // page.setSize(Math.max(questionDims.width, codeSnippetDims.width), questionDims.height + codeSnippetDims.height);
   page.setSize(codeSnippetDims.width, questionDims.height + codeSnippetDims.height);
 
@@ -88,12 +91,17 @@ const generateSubjectPdfs = async () => {
 const processFolder = async (subjectPath: string, period: string) => {
   const traceDir = path.join(subjectPath, period, 'tracing');
   const problemSolvingDir = path.join(subjectPath, period, 'problemSolving');
+  const problemSolvingFiles = getFolderContent(problemSolvingDir, false).filter(file => file.name.endsWith(".cpp"));
 
   const traceFiles = getFolderContent(traceDir, false).filter(file => file.name.endsWith(".cpp"));
+  let processing = 0;
   if(traceFiles.length > 0) {
   const tracePDF = await PDFDocument.create();
   const tracPDFPath = path.join(subjectPath, `tracing.pdf`);
+
   for (const file of traceFiles) {
+    processing++
+    console.log(`[${processing} / ${problemSolvingFiles.length + traceFiles.length}] ${file.name}`)
     const cppFilePath = path.join(traceDir, file.name);
     const questionImagePath = path.join(traceDir, file.name.replace(".cpp", ".png"));
   
@@ -108,12 +116,14 @@ const processFolder = async (subjectPath: string, period: string) => {
 }
 
 
-const problemSolvingFiles = getFolderContent(problemSolvingDir, false).filter(file => file.name.endsWith(".cpp"));
 if(problemSolvingFiles.length > 0) {
 
   const problemSolvingPDF = await PDFDocument.create();
   const problemSolvingPDFPath = path.join(subjectPath, `problemSolving.pdf`);
   for (const file of problemSolvingFiles) {
+    processing++
+    console.log(`[${processing} / ${problemSolvingFiles.length + traceFiles.length}] ${file.name}`)
+
     const cppFilePath = path.join(problemSolvingDir, file.name);
     const questionImagePath = path.join(problemSolvingDir, file.name.replace(".cpp", ".png"));
 
