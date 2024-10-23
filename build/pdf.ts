@@ -169,7 +169,7 @@ const generateSubjectPdfs = async () => {
   const subjects = getFolderContent(path.join(dirname as string, ".."));
 
   for (const subject of subjects) {
-    if(subject.name == 'GI131' )continue;
+    // if(subject.name == 'GI131' )continue;
     const subjectPath = path.join(dirname as string, "..", subject.name);
     const midFolder = hasFolder(Array.from(Deno.readDirSync(subjectPath)), "mid");
     const finalFolder = hasFolder(Array.from(Deno.readDirSync(subjectPath)), "final");
@@ -190,7 +190,7 @@ const processFolder = async (subjectPath: string, period: string) => {
 
   const traceFiles = getFolderContent(traceDir, false).filter(file => file.name.endsWith(".cpp"));
   let processing = 0;
-  if(traceFiles.length > 0 && false) {
+  if(traceFiles.length > 0 ) {
   const templateBytes = fs.readFileSync(path.join(import.meta.dirname as string , `تتبع ${period == "mid" ? 'النصفي' : 'النهائي'}.pdf`))
   const tracePDF = await PDFDocument.load(templateBytes);
   const tracPDFPath = path.join(subjectPath, period, `تتبع ${period == "mid" ? 'النصفي' : 'النهائي'}.pdf`);
