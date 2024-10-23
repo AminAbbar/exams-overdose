@@ -1097,7 +1097,7 @@ int main(){
 ```
 </details>
       <br id="GI132_mid_Problem">
-      <summary dir="rtl"><h3> نصفي - الأسئلة المقالية :</h3></summary>
+      <details><summary dir="rtl"><h3> نصفي - الأسئلة المقالية :</h3></summary>
 ![](./GI132/mid/problemSolving/1.png) 
 
  ```cpp 
@@ -1599,7 +1599,7 @@ int main(){
     return 0;
 }  
 ```
-    
+</details>
       <br id="GI132_final_Trace">
 <details>      <summary dir="rtl"><h3>نهائي - أسئلة التتبع :</h3></summary>
 

@@ -55,9 +55,9 @@ const generateSectionContent = (id: string, hasMid: boolean, hasFinal: boolean) 
 ${generateCppFileContent(traceDir,currentFolder.name,"mid")}
 </details>
       <br id="${id}_mid_Problem">
-      <summary dir="rtl"><h3> نصفي - الأسئلة المقالية :</h3></summary>
+      <details><summary dir="rtl"><h3> نصفي - الأسئلة المقالية :</h3></summary>
 ${generateCppFileContent(problemSolvingDir,currentFolder.name,"mid")}
-    `;
+</details>`;
   }
 
   if (hasFinal) {
