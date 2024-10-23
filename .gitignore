@@ -2,3 +2,4 @@
 *.py
 
 *.lock
+node_modules
