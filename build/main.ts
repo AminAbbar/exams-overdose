@@ -56,6 +56,7 @@ ${generateCppFileContent(traceDir,currentFolder.name,"mid")}
 </details>
       <br id="${id}_mid_Problem">
       <details><summary dir="rtl"><h3> نصفي - الأسئلة المقالية :</h3></summary>
+      
 ${generateCppFileContent(problemSolvingDir,currentFolder.name,"mid")}
 </details>`;
   }
