@@ -1,7 +1,7 @@
 import * as path from "@std/path";
 import { execSync } from "node:child_process";
 import fs from "node:fs";
-import { PDFDocument } from 'npm:pdf-lib';
+import { PDFDocument , rgb , StandardFonts  } from 'npm:pdf-lib';
 
 // const decoder = new TextDecoder();
 // const metaData: Record<string, string> = JSON.parse(decoder.decode(Deno.readFileSync("./metadata.json")));
@@ -26,7 +26,15 @@ const generateCodeSnippet = (cppFilePath: string, outputDir: string): string => 
   const fileNameWithoutExt = path.basename(cppFilePath, ".cpp");
   const tempName = `${fileNameWithoutExt}_${Date.now()}`
   const outputFilePath = path.join(outputDir, `${tempName}.png`);
-  execSync(`carbon-now ${cppFilePath} --save-to=${outputDir} --save-as=${tempName} --theme dracula`);
+  while(true){
+  try{
+
+    execSync(`carbon-now ${cppFilePath} --save-to=${outputDir} --save-as=${tempName} --theme dracula`);
+    break;
+  }catch (e){
+    console.log('retrying snippet ...' )
+  }
+  }
 
   if (!fs.existsSync(outputFilePath)) {
     throw new Error(`Snippet generation failed for: ${cppFilePath}`);
@@ -34,47 +42,134 @@ const generateCodeSnippet = (cppFilePath: string, outputDir: string): string => 
 
   return outputFilePath;
 };
+const addFirstPageWithTextAndLink = async (pdfDoc: PDFDocument) => {
+  const firstPage = pdfDoc.addPage([595.28, 841.89]); // A4 size (portrait)
 
-const generatePdf = async (pdfDoc:PDFDocument , questionImagePath: string, codeSnippetImagePath: string) => {
+  const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
+  const fontSize = 16;
+  const cyanColor = rgb(0, 1, 1);
+
+ 
+  const textLines = [
+    "اسئلة امتحانات نهائية سابقة للأستاذ فرج الشركسي",
+    "",
+    "في اسئلة مكررة ف الملف وفي اسئلة فيها اختلاف بسيط لو شفت سوال متكرر ركز فيه مرات فيه اختلاف بسيط",
+    "",
+    "النص الاول اسئلة مقالية و الباقي تتبع",
+    "",
+    "لو لاحظتو أي خطأ قولولنا",
+  ];
+
+  let y = 700; 
+
+  for (const line of textLines) {
+    const textWidth = font.widthOfTextAtSize(line, fontSize);
+    const x = (595.28 - textWidth) / 2;
+    firstPage.drawText(line, {
+      x,
+      y,
+      size: fontSize,
+      font,
+      color: rgb(1, 1, 1),
+    });
+    y -= fontSize + 10;
+  }
+
+
+  const linkText = "لو اي حد بيي الاكواد يفهمهم يضغط هنا";
+  const linkFontSize = 14;
+  const linkWidth = font.widthOfTextAtSize(linkText, linkFontSize);
+  const linkX = (595.28 - linkWidth) / 2; 
+  const linkY = y - 20; 
+
+  
+  firstPage.drawText(linkText, {
+    x: linkX,
+    y: linkY,
+    size: linkFontSize,
+    font,
+    color: cyanColor, 
+  });
+
+
+  firstPage.node.set(
+    //@ts-ignore d
+    'Annots',
+    pdfDoc.context.obj([
+      pdfDoc.context.obj({
+        Type: 'Annot',
+        Subtype: 'Link',
+        Rect: [linkX, linkY, linkX + linkWidth, linkY + linkFontSize],
+        Border: [0, 0, 0], 
+        A: {
+          Type: 'Action',
+          S: 'URI',
+          URI: "https://github.com/AminAbbar/exams-overdose", 
+        },
+      }),
+    ])
+  );
+};
+
+
+
+const generatePdf = async (pdfDoc: PDFDocument, questionImagePath: string, codeSnippetImagePath: string) => {
   const questionImageBytes = fs.readFileSync(questionImagePath);
   const codeSnippetImageBytes = fs.readFileSync(codeSnippetImagePath);
 
- 
-
   const page = pdfDoc.addPage();
-
   const questionImage = await pdfDoc.embedPng(questionImageBytes);
   const codeSnippetImage = await pdfDoc.embedPng(codeSnippetImageBytes);
 
-  const codeSnippetDims = codeSnippetImage.scale(0.5);
   const questionDims = questionImage.scale(1);
-  
-  codeSnippetDims.width = Math.max(questionDims.width, codeSnippetDims.width * 0.7)
-  codeSnippetDims.height = questionDims.width == codeSnippetDims.width ?  codeSnippetDims.height * 0.7 : codeSnippetDims.height
-  // page.setSize(Math.max(questionDims.width, codeSnippetDims.width), questionDims.height + codeSnippetDims.height);
-  page.setSize(codeSnippetDims.width, questionDims.height + codeSnippetDims.height);
+  let codeSnippetDims = codeSnippetImage.scale(0.4);
+
+  const desiredAspectRatio = 1.5;
+
+  const maxCodeWidth = codeSnippetDims.height * desiredAspectRatio;
+
+  if (codeSnippetDims.width > maxCodeWidth) {
+    const scaleFactor = maxCodeWidth / codeSnippetDims.width;
+    codeSnippetDims = codeSnippetImage.scale(scaleFactor);
+  }
+
+  const pageWidth = Math.max(questionDims.width, codeSnippetDims.width);
+  const pageHeight = questionDims.height + codeSnippetDims.height;
+  page.setSize(pageWidth, pageHeight);
+
+  page.drawRectangle({
+    x: 0,
+    y: 0,
+    width: pageWidth,
+    height: pageHeight,
+    color: rgb(0, 0, 0), 
+  });
+
+ 
+  const questionX = (pageWidth - questionDims.width) / 2;
+  const codeSnippetX = (pageWidth - codeSnippetDims.width) / 2; 
+
 
   page.drawImage(questionImage, {
-    x: 0,
-    y: codeSnippetDims.height,
-    width: codeSnippetDims.width,
+    x: questionX,
+    y: codeSnippetDims.height, 
+    width: questionDims.width,
     height: questionDims.height,
   });
 
   page.drawImage(codeSnippetImage, {
-    x: 0,
-    y: 0,
+    x: codeSnippetX,
+    y: 0, 
     width: codeSnippetDims.width,
     height: codeSnippetDims.height,
   });
-
-
 };
 
 const generateSubjectPdfs = async () => {
   const subjects = getFolderContent(path.join(dirname as string, ".."));
 
   for (const subject of subjects) {
+    if(subject.name == 'GI131' )continue;
     const subjectPath = path.join(dirname as string, "..", subject.name);
     const midFolder = hasFolder(Array.from(Deno.readDirSync(subjectPath)), "mid");
     const finalFolder = hasFolder(Array.from(Deno.readDirSync(subjectPath)), "final");
@@ -95,9 +190,10 @@ const processFolder = async (subjectPath: string, period: string) => {
 
   const traceFiles = getFolderContent(traceDir, false).filter(file => file.name.endsWith(".cpp"));
   let processing = 0;
-  if(traceFiles.length > 0) {
-  const tracePDF = await PDFDocument.create();
-  const tracPDFPath = path.join(subjectPath, `tracing.pdf`);
+  if(traceFiles.length > 0 && false) {
+  const templateBytes = fs.readFileSync(path.join(import.meta.dirname as string , `تتبع ${period == "mid" ? 'النصفي' : 'النهائي'}.pdf`))
+  const tracePDF = await PDFDocument.load(templateBytes);
+  const tracPDFPath = path.join(subjectPath, period, `تتبع ${period == "mid" ? 'النصفي' : 'النهائي'}.pdf`);
 
   for (const file of traceFiles) {
     processing++
@@ -117,9 +213,9 @@ const processFolder = async (subjectPath: string, period: string) => {
 
 
 if(problemSolvingFiles.length > 0) {
-
-  const problemSolvingPDF = await PDFDocument.create();
-  const problemSolvingPDFPath = path.join(subjectPath, `problemSolving.pdf`);
+  const templateBytes = fs.readFileSync(path.join(import.meta.dirname as string , `مقالي ${period == "mid" ? 'النصفي' : 'النهائي'}.pdf`))
+  const problemSolvingPDF =  await PDFDocument.load(templateBytes)
+  const problemSolvingPDFPath = path.join(subjectPath,  period, `مقالي ${period == "mid" ? 'النصفي' : 'النهائي'}.pdf`);
   for (const file of problemSolvingFiles) {
     processing++
     console.log(`[${processing} / ${problemSolvingFiles.length + traceFiles.length}] ${file.name}`)
